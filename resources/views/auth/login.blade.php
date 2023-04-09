@@ -53,8 +53,9 @@
         <div class="position-relative z-index-5">
             <div class="row">
                 <div class="col-lg-6 col-xl-8 col-xxl-8">
-                    <a href="./index.html" class="text-nowrap logo-img d-block px-4 py-9 pb-5 pb-xl-0 w-100">
-                        <img src="../../customer/dist/images/logos/dark-logo.svg" width="180" alt="">
+                    <a href="" class="text-nowrap logo-img d-block px-4 py-9 pb-3 pb-xl-0 w-100">
+                        <img src="../../logo/logolong1.png" width="240" alt="">
+                        <p>Expertise you need. Service you deserve!</p>
                     </a>
                     <div class="d-none d-lg-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
 {{--                        <img src="../../customer/dist/images/backgrounds/login-security.svg" alt="" class="img-fluid" width="500">--}}
@@ -66,7 +67,7 @@
                     <div class="card mb-0 shadow-none rounded-0 min-vh-100 h-100">
                         <div class="d-flex align-items-center w-100 h-100">
                             <div class="card-body px-xxl-5">
-                                <h2 class="mb-3 fs-7 fw-bolder text-center">Welcome to Modernize</h2>
+                                <h2 class="mb-3 fs-7 fw-bolder text-center">Welcome to <img src="../../logo/logolong1.png" height="32" style="margin-bottom: 4px"></h2>
 
 
                                 <div class="position-relative text-center my-4">

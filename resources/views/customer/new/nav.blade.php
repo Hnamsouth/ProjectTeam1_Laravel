@@ -1,15 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light">
+    <a href="javascript:void(0)" class="nav-link d-flex d-lg-none align-items-start justify-content-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="ti ti-align-justified fs-7"></i>
+    </a>
     <ul class="navbar-nav">
         <li class="nav-item aside-list">
             <a class=" nav-link nav-icon-hover ms-n3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <i class="ti ti-menu-2 fs-6"></i>
             </a>
         </li>
-
     </ul>
     <div class="d-block d-lg-none">
-        <img src="../../customer/dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
-        <img src="../../customer/dist/images/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
+        <a href=""><img src="../../logo/logolong1.png" class="dark-logo my-3" height="40" alt="" /></a>
+        <img src="../../logo/logolong1.png" class="light-logo"  height="40" alt="" />
     </div>
     <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="p-2">
@@ -18,11 +20,8 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <div class="d-flex align-items-center justify-content-between">
-            <a href="javascript:void(0)" class="nav-link d-flex d-lg-none align-items-center justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <i class="ti ti-align-justified fs-7"></i>
-            </a>
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item">
                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="ti ti-search"></i>
                     </a>
@@ -53,7 +52,7 @@
                     <a class="nav-link pe-0" href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="d-flex align-items-center">
                             <div class="user-profile-img">
-                                <img src="../../customer/dist/images/profile/user-1.jpg" class="rounded-circle" width="35" height="35" alt="" />
+                                <img src="../../bg/doge1.png" class="rounded-circle" width="35" height="35" alt="" />
                             </div>
                         </div>
                     </a>

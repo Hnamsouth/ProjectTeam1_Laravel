@@ -18,15 +18,15 @@
 {{--                                        src="../../customer/dist/images/big/img8.jpg"--}}
                                         src="{{$item->img}}"
                                         alt="image"
-                                        class="rounded"
-                                        width="200"
+                                        class="rounded mb-3"
+                                        width="250"
                                     />
                             </div>
                             <div class="col-sm-12 col-lg-8 col-xl-9 ">
                                 <div class="row">
                                     <div class="col-md-12 col-xl-3">
                                         <h5>BENEFIT</h5>
-                                        <p></p>
+                                        <p>No joining & annual fee required. Lifetime support.</p>
                                     </div>
                                     <div class="col-md-12 col-xl-3">
                                         <h5>OUTSTANDING OFFER</h5>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            @endforeach                                  end Image with round corner
+            @endforeach
         </div>
     </section>
     </div>

@@ -1,8 +1,10 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="mobilenavbar" aria-labelledby="offcanvasWithBothOptionsLabel">
     <nav class="sidebar-nav scroll-sidebar">
-        <div class="offcanvas-header justify-content-between">
-            <img src="../../customer/dist/images/logos/favicon.png" alt="" class="img-fluid">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header justify-content-between" style="padding-left: 24px">
+            <img src="../../logo/logolong1.png" alt="" height="40">
+            <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="ti ti-x fs-8"></i>
+            </div>
         </div>
         <div class="offcanvas-body profile-dropdown mobile-navbar" data-simplebar=""  data-simplebar>
             <ul id="sidebarnav">

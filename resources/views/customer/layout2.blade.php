@@ -21,7 +21,7 @@
     <!-- --------------------------------------------------- -->
     <!-- Favicon -->
     <!-- --------------------------------------------------- -->
-    <link rel="shortcut icon" type="image/png" href="../../customer/dist/images/logos/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="../../logo/logo1.png" />
     <!-- --------------------------------------------------- -->
     <!-- Core Css -->
     <!-- --------------------------------------------------- -->
@@ -33,7 +33,7 @@
 <body>
 <!-- Preloader -->
 <div class="preloader">
-    <img src="../../customer/dist/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid" />
+    <img src="../../logo/logo1.png" alt="loader" class="lds-ripple img-fluid" />
 </div>
 <!-- --------------------------------------------------- -->
 <!-- Body Wrapper -->

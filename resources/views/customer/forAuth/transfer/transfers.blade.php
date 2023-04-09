@@ -120,12 +120,12 @@
                                   <div class="mb-3">
                                       <label for="exampleInputEmail1" class="form-label fw-semibold">Type your 6 digits security code</label>
                                       <div class="d-flex align-items-center gap-2 gap-sm-3" id="trans">
-                                          <input type="number" class="form-control ip-code" data-index="1" maxlength="1">
-                                          <input type="number" class="form-control ip-code" data-index="2" maxlength="1">
-                                          <input type="number" class="form-control ip-code" data-index="3" maxlength="1">
-                                          <input type="number" class="form-control ip-code" data-index="4" maxlength="1">
-                                          <input type="number" class="form-control ip-code" data-index="5" maxlength="1">
-                                          <input type="number" class="form-control ip-code" data-index="6" maxlength="1">
+                                          <input type="number" class="form-control ip-code" data-index="1" maxlength="1" placeholder="-">
+                                          <input type="number" class="form-control ip-code" data-index="2" maxlength="1" placeholder="-">
+                                          <input type="number" class="form-control ip-code" data-index="3" maxlength="1" placeholder="-">
+                                          <input type="number" class="form-control ip-code" data-index="4" maxlength="1" placeholder="-">
+                                          <input type="number" class="form-control ip-code" data-index="5" maxlength="1" placeholder="-">
+                                          <input type="number" class="form-control ip-code" data-index="6" maxlength="1" placeholder="-">
                                       </div>
                                   </div>
                                   <p class="text-danger hide" id="mess-err-trans">Transfer password incorrect</p>

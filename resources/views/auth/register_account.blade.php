@@ -14,10 +14,10 @@
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <a href="/" class="text-nowrap logo-img d-block px-4 py-9 pb-5 pb-xl-0 w-100">
-                    <img src="../../customer/dist/images/logos/dark-logo.svg" width="180" alt="">
+                    <img src="../../logo/logolong1.png" height="40" alt="">
                 </a>
                 <div class="d-none d-lg-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
-                    <img src="../../customer/dist/images/backgrounds/rocket.png" alt="" class="img-fluid" width="200">
+                    <img src="../../bg/pig1.png" alt="" class="img-fluid" width="200">
                 </div>
             </div>
             <div class="col-md-12 col-lg-8 col-xl-8">
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="CCCD">CMND/CCCD <span class="text-danger">(*)</span></label>
+                                                <label for="CCCD">National ID <span class="text-danger">(*)</span></label>
                                                 <input type="text" name="CCCD" class="form-control required" id="CMND_CCCD" />
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@
                                     </div>
                                 </section>
                                 <!-- Step 2 -->
-                                <h6>Take CCCD/CMND pictrue and video</h6>
+                                <h6>Take National ID, picture and video</h6>
                                 <section>
 {{--                                    <div class="">--}}
 {{--                                        <div class="col-md-4">--}}
@@ -257,7 +257,7 @@
                                                     <img src="{{  $account_type->CardType[0]->DebitCardType->img }}"  width="200">
 
                                                     <div class="mb-3 text-center">
-                                                        <button type="submit" class="btn text-light" style="background-color:#5d87ff; ">Register</button>
+                                                        <button type="submit" class="btn text-light mt-5" style="background-color:#5d87ff; ">Register</button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -37,6 +37,9 @@
                                                         <input type="password" class="form-bl text-end" id="balance" value="{{ $item->BalanceCardAccount->balance}}" disabled> <a class="ms-2" type="button" onclick="showBalance(true)"><i class="ti ti-aperture"></i></a>
                                                     </div>
                                                 </div>
+                                                <div class="row justify-content-end">
+                                                    <div class="col-6 p-0"><button type="button" class="btn btn-danger float-end"><a class="text-decoration-none text-white" href="user/acc/transfer/within-bank">Make Transaction</a></button></div>
+                                                </div>
                                             </div>
                                         </div>
                                 </div>
