@@ -24,7 +24,7 @@
                       <section>
                           <div class="card">
                               <div class="card-header text-center">
-                                  <h3>Benecifiary transfer details</h3>
+                                  <h2>Benecifiary transfer details</h2>
                               </div>
                               <div class="card-body">
                                   <div class="row">
@@ -100,7 +100,7 @@
                       <section>
                           <div class="card">
                               <div class="card-header text-center">
-                                  <h3>Transfer  Information</h3>
+                                  <h2>Transfer Information</h2>
                               </div>
                               <div class="card-body">
                                   <div class="row">
