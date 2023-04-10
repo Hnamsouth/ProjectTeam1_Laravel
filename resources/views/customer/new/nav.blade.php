@@ -1,7 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a href="javascript:void(0)" class="nav-link d-flex d-lg-none align-items-start justify-content-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <i class="ti ti-align-justified fs-7"></i>
-    </a>
+    {{--    icon sidenav mobile--}}
+    <div class="navbar-nav d-lg-none d-block justify-content-start align-items-center">
+        <div class="d-inline-block">
+            <a href="javascript:void(0)" class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class="ti ti-align-justified fs-7"></i>
+            </a>
+        </div>
+        <div class="d-inline block">
+            <a href=""><img src="../../logo/logolong1.png" class="dark-logo my-3 ms-3" height="40" alt="" /></a>
+            <img src="../../logo/logolong1.png" class="light-logo"  height="40" alt="" />
+        </div>
+    </div>
+    {{--    end icon mobile--}}
+{{--    icon sidenav desktop--}}
     <ul class="navbar-nav">
         <li class="nav-item aside-list">
             <a class=" nav-link nav-icon-hover ms-n3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -9,15 +20,16 @@
             </a>
         </li>
     </ul>
-    <div class="d-block d-lg-none">
-        <a href=""><img src="../../logo/logolong1.png" class="dark-logo my-3" height="40" alt="" /></a>
-        <img src="../../logo/logolong1.png" class="light-logo"  height="40" alt="" />
-    </div>
-    <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+{{--    end icon sidenav desktop--}}
+    <div class="d-flex d-lg-none justify-content-between align-items-center">
+        {{--    button topnav mobile--}}
+        <button class="navbar-toggler d-lg-none p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="p-2">
                 <i class="ti ti-dots fs-7"></i>
               </span>
-    </button>
+        </button>
+        {{--    end button topnav mobile--}}
+    </div>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <div class="d-flex align-items-center justify-content-between">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
