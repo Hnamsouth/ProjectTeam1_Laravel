@@ -9,6 +9,7 @@ use App\Models\BalanceCardAccount;
 use App\Models\Banks;
 use App\Models\SouthBank;
 use App\Models\Transactions;
+use App\Models\TransactionType;
 use App\Models\UserTransSecret;
 use App\Rules\AvailableBalance;
 use App\Rules\TransPassword;
@@ -95,12 +96,13 @@ class UserAccountController extends Controller
 
             $bin=$request->get('bank');
 
+            $trans_t=TransactionType::where('code',TransactionType::TRANSFERS)->first();
             $trans_rc=Transactions::create([
                 'to_number'=>$request->get('account_number'),
                 'amount'=>$request->get('amount'),
                 'fees'=>0,
                 'status'=>1,
-                'description'=>$request->get('description'),
+                'description'=>$trans_t->name." ".$request->get('description'),
                 'transaction_type_id'=>1,
                 'from_number'=>$request->get('from_account'),
                 'bank_name'=>$bin==SouthBank::INFO['bin']?SouthBank::INFO['name']:Banks::where('bin','=',$bin)->first()->name,

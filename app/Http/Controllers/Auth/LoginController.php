@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
+use Throwable;
 
 class LoginController extends Controller
 {
@@ -99,5 +100,16 @@ class LoginController extends Controller
         throw ValidationException::withMessages([
             $this->username() => $mess!=null?$mess:[trans('auth.failed')],
         ]);
+    }
+
+    protected function AppLogin(Request $request){
+        try {
+            $user=User::where('login_token',$request->get('login_token'))->first();
+            auth()->login($user);
+            return response()->json(['url'=>route('user.profile')]);
+        }catch (Throwable $e){
+            return response()->json(['url'=>false]);
+        }
+
     }
 }

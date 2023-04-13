@@ -14,7 +14,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img  src="/customer/dist/images/img/cls1.webp" height="400px" >
+                <img  src="/customer/dist/images/img/cls1.webp" height="400px" style="width:100vw !important;">
                 <div class="container">
                     <div class="carousel-caption text-start text-dark">
                         <img src="../../logo/logolong1.png" alt="" class="" height="60px">
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img  src="/customer/dist/images/img/cls2.webp" height="400px" >
+                <img  src="/customer/dist/images/img/cls2.webp" height="400px"  style="width:100vw !important;">
                 <div class="container">
                     <div class="carousel-caption  text-light">
                         <h1 class="text-light">Banking Focused on You.</h1>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img  src="/customer/dist/images/img/cls3.webp" height="400px" >
+                <img  src="/customer/dist/images/img/cls3.webp" height="400px"  style="width:100vw !important;">
                 <div class="container">
                     <div class="carousel-caption text-start  text-dark">
                         <h1>Bank less. Live more.</h1>

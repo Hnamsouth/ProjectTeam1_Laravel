@@ -48,30 +48,30 @@
                     </div>
                 </div>
                 @if(isset($item->DepositAccount))
+                    <div class="d-flex justify-content-between m-2">
+                        <h4>Deposit Account</h4>
+                    </div>
                    @foreach($item->DepositAccount as $da)
                         <div class="col-12">
-                            <div class="d-flex justify-content-between m-2">
-                                <h4>Deposit Account</h4>
-                            </div>
                             <div class="card card-hover">
                                 <div class="row p-4">
                                     <div class="col-sm-6 col-md-4">
                                         <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">ACCOUNT NUMBER:  </span> <span class="fs-3 text-bg-light-gray">{{$da->account_number}}</span></div>
                                     </div>
                                     <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">PROFIT:  </span> <span class="fs-3 text-bg-light-gray">{{$da->profit}}</span></div>
+                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">PROFIT:  </span> <span class="fs-3 text-bg-light-gray">{{ number_format($da->profit,2)}} VND</span></div>
                                     </div>
                                     <div class="col-sm-6 col-md-4">
                                         <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">DAYS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->days}}</span></div>
                                     </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">METHOD OF INTEREST PAYMENT:  </span> <span class="fs-3 text-bg-light-gray">{{$da->interest_payment_period}}</span></div>
-                                    </div>
+{{--                                    <div class="col-sm-6 col-md-4">--}}
+{{--                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">METHOD OF INTEREST PAYMENT:  </span> <span class="fs-3 text-bg-light-gray">{{$da->interest_payment_period}}</span></div>--}}
+{{--                                    </div>--}}
                                     <div class="col-sm-6 col-md-4">
                                         <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">CLOSE DATE:  </span> <span class="fs-3 text-bg-light-gray">{{$da->close_date}}</span></div>
                                     </div>
                                     <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">TERMS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->terms}}</span></div>
+                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">TERMS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->terms}} Months</span></div>
                                     </div>
 
                                 </div>

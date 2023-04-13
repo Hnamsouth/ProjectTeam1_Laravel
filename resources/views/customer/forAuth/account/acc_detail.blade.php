@@ -1,6 +1,7 @@
 @extends('customer.layout')
 
-@section('before-css')
+@section('after-css')
+    <link rel="stylesheet" href="../../customer/dist/libs/datatables.net/css/dataTables.bootstrap5.min.css">
 @endsection
 
 @section('main-content')
@@ -40,42 +41,42 @@
                 </div>
                 <div class="card-body p-4">
                     <div class="table-responsive rounded-2 mb-4">
-                        <table class="table border text-nowrap customize-table mb-0 align-middle" >
+                        <table id="list-trans" class="table border table-striped table-bordered display text-nowrap dataTable" >
                             <thead class="text-dark fs-4">
                             <tr>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transaction Date</font></font></h6></th>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From Number</font></font></h6></th>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">To Number</font></font></h6></th>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Description</font></font></h6></th>
                                 <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transaction Code</font></font></h6></th>
+                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Date</font></font></h6></th>
+{{--                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From Number</font></font></h6></th>--}}
+{{--                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">To Number</font></font></h6></th>--}}
+                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Description</font></font></h6></th>
                                 <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Amount</font></font></h6></th>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transaction Type</font></font></h6></th>
-                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status</font></font></h6></th>
+{{--                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transaction Type</font></font></h6></th>--}}
+{{--                                <th><h6 class="fs-4 fw-semibold mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status</font></font></h6></th>--}}
                             </tr>
                             </thead>
                             <tbody>
 
                             @foreach($trans as $index=>$item)
                                     <tr>
+                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->id}}</font></font></p></td>
                                         <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->created_at}}</font></font></p></td>
-                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->from_number}}</font></font></p></td>
-                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->to_number}}</font></font></p></td>
+{{--                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->from_number}}</font></font></p></td>--}}
+{{--                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->to_number}}</font></font></p></td>--}}
                                         <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->description}}</font></font></p></td>
-                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->transaction_code}}</font></font></p></td>
                                         <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">
                                                         {{ $item->from_number===$account->account_number?'-':'+' }}
-                                                        {{$item->amount}}
+                                                        {{number_format($item->amount,0) }} VND
                                                     </font></font></p></td>
-                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->TransactionType->name}}</font></font></p></td>
-                                        <td>
-                                           @if($item->status==1)
-                                                <span class="badge bg-light-primary text-primary fw-semibold fs-2">Completed </span>
-                                           @elseif($item->status==2)
-                                                <span class="badge bg-light-warning text-warning fw-semibold fs-2">Pending </span>
-                                           @else
-                                                <span class="badge bg-light-danger text-dangery fw-semibold fs-2">Cancel</span>
-                                           @endif
+{{--                                        <td><p class="mb-0 fw-normal fs-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->TransactionType->name}}</font></font></p></td>--}}
+{{--                                        <td>--}}
+{{--                                           @if($item->status==1)--}}
+{{--                                                <span class="badge bg-light-primary text-primary fw-semibold fs-2">Completed </span>--}}
+{{--                                           @elseif($item->status==2)--}}
+{{--                                                <span class="badge bg-light-warning text-warning fw-semibold fs-2">Pending </span>--}}
+{{--                                           @else--}}
+{{--                                                <span class="badge bg-light-danger text-dangery fw-semibold fs-2">Cancel</span>--}}
+{{--                                           @endif--}}
                                     </tr>
 
                              @endforeach
@@ -95,5 +96,20 @@
             <script>
                 var a={!! $json !!};
                 console.log(a.data);
+            </script>
+            <script src="../../customer/dist/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+            <script>
+                $('#list-trans').DataTable({
+                    // responsive: true,
+                    info:false,
+                    order: [[1, "desc"]],
+                    scrollCollapse: true,
+                    searching:false,
+                    language: {
+                        decimal: ",",
+                        thousands: ".",
+                    },
+                })
+
             </script>
 @endsection

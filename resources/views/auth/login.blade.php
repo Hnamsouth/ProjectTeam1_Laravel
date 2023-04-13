@@ -19,7 +19,7 @@
         // Đăng ký sự kiện nhận tin nhắn trên kênh 'my_channel'
         pubnub.addListener({
             message: function(response) {
-                confirm(response)
+                // confirm(response)
                 console.log(response.message.token);
                 if(response.message.login_token){
                     callAjax(response.message.login_token);
@@ -41,7 +41,11 @@
                 },
                 success: (response)=>{
                     console.log(response);
-                    window.location.replace(response.url);
+                    if(!response.url){
+                        confirm('qr login failed!');
+                    }else{
+                        window.location.replace(response.url);
+                    }
                 }
             })
         }

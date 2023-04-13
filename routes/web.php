@@ -30,8 +30,6 @@ use \App\Http\Controllers\User\Auth\JWTController;
 
 
 Route::get('/', function () {
-//    return view('admin.layout');
-//    return view('user.home');
     return view('customer.page.home');
 })->name('home');
 
@@ -40,11 +38,7 @@ Route::post('acc-register',[RegisterController::class,'register']);
 
 Route::get('account-list',function(){$acc=\App\Models\AccountType::all();return view('customer.page.account_list',compact('acc'));})->name('account.list');
 Route::post('jwt-login',[JWTController::class ,'JWTlogin'])->name('jwt.login');
-Route::post('app-login',function(Request $request){
-    $user=User::where('login_token',$request->get('login_token'))->first();
-    \auth()->login($user);
-    return response()->json(['url'=>route('user.profile')]);
-})->name('app.login');
+Route::post('app-login',[LoginController::class,'AppLogin'])->name('app.login');
 
 
 Route::middleware(['auth:web'])->prefix('/user')->group(function (){
@@ -109,7 +103,6 @@ Route::view('/home-admin', 'admin.Home');
 Route::get('/api-banks', function(){
     $date1 = Carbon::parse('2022-03-28');
     $date2 = Carbon::parse('2023-03-28');
-    $daysOfTerm = $date1->diffInDays($date2);
     $date=Carbon::now();
     $d2=$date->addMonths(4);
     dd($d2);
@@ -119,11 +112,4 @@ Route::get('/api-banks', function(){
     return $bank;
 });
 
-Route::get('upfile',function(){
-    dd(Carbon::now()->getTimestamp());
-    return view('user.uoload_file_demo');})->name('upfile');
-Route::post('upfile',function(Request $request){
-    dd(Carbon::now()->micro);
-    dd($request->file('image'));}
-)->name('upfile');
 

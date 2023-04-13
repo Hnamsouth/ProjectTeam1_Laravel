@@ -24,7 +24,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="./authentication-login.html" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-credit-card" style="font-size: 20px"></i>
                                 </div>
@@ -32,7 +32,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./authentication-login2.html" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-credit-card-off" style="font-size: 20px"></i>
                                 </div>
@@ -50,7 +50,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('user.account.list') }}" class="ms-4 sidebar-link">
+                            <a href="{{ route('account.list') }}" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-user" style="font-size: 20px;"></i>
                                 </div>
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./authentication-register2.html" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-businessplan" style="font-size: 20px"></i>
                                 </div>
@@ -76,7 +76,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="./authentication-forgot-password.html" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-receipt-2" style="font-size: 20px"></i>
                                 </div>
@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./authentication-forgot-password2.html" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-coin" style="font-size: 20px"></i>
                                 </div>
@@ -120,7 +120,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="./authentication-maintenance.html" aria-expanded="false">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false">
                   <span class="rounded-3">
                     <i class="ti ti-news"></i>
                   </span>
@@ -128,7 +128,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="./authentication-maintenance.html" aria-expanded="false">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false">
                   <span class="rounded-3">
                     <i class="ti ti-phone"></i>
                   </span>

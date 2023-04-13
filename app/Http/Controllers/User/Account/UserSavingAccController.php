@@ -11,6 +11,7 @@ use App\Models\InterestPaymentMethod;
 use App\Models\SavingInterestRate;
 use App\Models\SettlementMethod;
 use App\Models\Transactions;
+use App\Models\TransactionType;
 use App\Models\UserTransSecret;
 use App\Rules\AvailableBalance;
 use App\Rules\TransPassword;
@@ -135,13 +136,14 @@ class UserSavingAccController extends Controller
             if($da->id){
                 $bl=BalanceCardAccount::where('account_id',$sa->id)->decrement('balance',$am);
                 if($bl){
+                    $trans_t=TransactionType::where('code',TransactionType::SAVING_DEPOSIT)->first();
                     $trans=Transactions::create([
                         'to_number'=>$an,
                         'amount'=>$am,
                         'fees'=>0,
                         'status'=>1,
-                        'description'=>"",
-                        'transaction_type_id'=>5,
+                        'description'=>$trans_t,
+                        'transaction_type_id'=>TransactionType::SAVING_DEPOSIT,
                         'from_number'=>$sa->account_number,
                         'account_holder_name'=>$sa->User->UserInfo->name,
                     ]);
@@ -190,12 +192,13 @@ class UserSavingAccController extends Controller
             $dacc->update([
                 'status'=>false
             ]);
+            $trans_t=TransactionType::where('code',TransactionType::SAVING_DEPOSIT)->first();
             Transactions::create([
                 'to_number'=>$request->get('acc_to_receive'),
                 'amount'=>$init,
                 'fees'=>0,
                 'status'=>1,
-                'description'=>"Finalize savings account",
+                'description'=>$trans_t->name." "."Finalize savings account",
                 'transaction_type_id'=>5,
                 'from_number'=>$dacc->account_number,
                 'account_holder_name'=>$dacc->DepositType->name,
