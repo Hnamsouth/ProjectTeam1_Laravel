@@ -16,7 +16,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+                    <a class="sidebar-link has-arrow" href="{{ route('account.list') }}" aria-expanded="false">
                   <span class="d-flex">
                     <i class="ti ti-credit-card"></i>
                   </span>
@@ -24,7 +24,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="#" class="ms-4 sidebar-link">
+                            <a href="{{ route('account.list') }}" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-credit-card" style="font-size: 20px"></i>
                                 </div>
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="ms-4 sidebar-link">
+                            <a href="{{route('user.saving-acc-list')}}" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-businessplan" style="font-size: 20px"></i>
                                 </div>
@@ -102,7 +102,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="./sb-e-wallet" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-wallet" style="font-size: 20px"></i>
                                 </div>
@@ -110,7 +110,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./coupon" class="ms-4 sidebar-link">
+                            <a href="#" class="ms-4 sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-discount-2" style="font-size: 20px"></i>
                                 </div>

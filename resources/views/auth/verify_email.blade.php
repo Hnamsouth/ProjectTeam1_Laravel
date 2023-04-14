@@ -2,7 +2,7 @@
     <div style="width:600px;height:100%;margin:auto">
         <div style="margin:40px 0 44px 0">
             <a style="color:#871fff;text-decoration:none" href="#" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://dashboard.nexmo.com/&amp;source=gmail&amp;ust=1676809058748000&amp;usg=AOvVaw2z1mzjKOo9O4PscUwpGu-M">
-                <img src="https://drive.google.com/uc?export=view&id=1-P8H9NQO2LdEztHlzgX7gTxO6tyaxwCb" style="vertical-align:middle;width:45%;max-width:100%;border-width:0" alt="Vonage APIs" class="CToWUd" data-bit="iit">
+                <img src="https://drive.google.com/uc?export=view&id=1-P8H9NQO2LdEztHlzgX7gTxO6tyaxwCb" style="vertical-align:middle;width:45%;max-width:100%;border-width:0" alt="SouthBankALT" class="CToWUd" data-bit="iit">
             </a>
             <div>
                 <div>

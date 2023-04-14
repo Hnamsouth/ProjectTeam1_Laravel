@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./authentication-login2.html" class="sidebar-link">
+                            <a href="{{ route('user.account.list') }}" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-lock" style="font-size: 21.21px"></i>
                                 </div>
@@ -113,7 +113,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="./authentication-forgot-password.html" class="sidebar-link">
+                            <a href="#" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-cash-banknote" style="font-size: 21.21px"></i>
                                 </div>
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="./authentication-forgot-password2.html" class="sidebar-link">
+                            <a href="#" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-businessplan" style="font-size: 21.21px"></i>
                                 </div>
@@ -131,7 +131,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="./authentication-maintenance.html" aria-expanded="false">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false">
                   <span class="rounded-3">
                     <i class="ti ti-news"></i>
                   </span>
@@ -139,7 +139,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="./authentication-maintenance.html" aria-expanded="false">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false">
                   <span class="rounded-3">
                     <i class="ti ti-phone"></i>
                   </span>
@@ -159,17 +159,17 @@
                 </div>
             </div>
         </nav>
-        <div class="fixed-profile p-3 bg-light-secondary rounded sidebar-ad mt-3">
+        <div class="fixed-profile p-3 rounded sidebar-ad mt-3" style="background: url('../../card/card1.png');">
             <div class="hstack gap-3">
                 <div class="john-img">
                     <img src="../../bg/doge1.png" class="rounded-circle" width="40" height="40" alt="">
                 </div>
                 <div class="john-title">
-                    <h6 class="mb-0 fs-4 fw-semibold">Mathew</h6>
-                    <span class="fs-2 text-dark">Designer</span>
+                    <h6 class="mb-0 fs-4 fw-semibold text-white">SouthBank</h6>
+                    <span class="fs-2 text-white">Welcome</span>
                 </div>
-                <button class="border-0 bg-transparent text-primary ms-auto" tabindex="0" type="button" aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="logout">
-                    <i class="ti ti-power fs-6"></i>
+                <button class="border-0 bg-transparent text-white ms-auto" tabindex="0" type="button" aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="logout">
+                    <a href="logout/0"><i class="ti ti-power fs-6 text-white"></i></a>
                 </button>
             </div>
         </div>
