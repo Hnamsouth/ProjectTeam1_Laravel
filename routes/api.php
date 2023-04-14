@@ -37,16 +37,20 @@ Route::group([
 
 Route::post('app-login',function(Request $request){
 
-    $validate=$request->validate([
-       'username'=>['required'],
-       'password'=>['required'],
-    ]);
-
-    $user=\App\Models\User::where('username',$request->get('username'))->first();
-    if(Hash::check($request->get('password'),$user->password)){
-        return response()->json(['token'=>$user->login_token]);
+    try {
+        $validate=$request->validate([
+            'username'=>['required'],
+            'password'=>['required'],
+        ]);
+        $user=\App\Models\User::where('username',$request->get('username'))->first();
+        if(Hash::check($request->get('password'),$user->password)){
+            return response()->json(['token'=>$user->login_token]);
+        }
+        return response()->json(['token'=>false]);
+    }catch (Throwable $e){
+        return response()->json(['token'=>$e]);
     }
-    return response()->json(['data'=>false]);
+
 
 
 

@@ -51,13 +51,13 @@ class UserAccountController extends Controller
         return view('customer.forAuth.account.acc_detail',compact('account','trans','json'));
     }
 
-     public function showTransferWithinBank(){
+     public function showTransferWithinBank(Accounts $account){
          $acc=auth()->user()->Accounts;
         //        get banks
          $banks[]=SouthBank::INFO;
          $banks[]=Banks::orderBy('shortName','asc')->get();
-        //        dd($banks);
-        return view('customer.forAuth.transfer.transfers',compact('banks','acc'));
+
+        return view('customer.forAuth.transfer.transfers',compact('banks','acc','account'));
      }
 
     /**

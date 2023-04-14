@@ -34,7 +34,9 @@
                                               <select class=" form-select required" id="from_account" name="from_account" required style="width: 100%; height: 36px" >
                                                   <option></option>
                                                   @foreach($acc as $item)
-                                                      <option value="{{$item->account_number }}">{{ $item->account_number."-".$item->AccountType->name.'. '.$item->BalanceCardAccount->balance }}</option>
+                                                      <option value="{{$item->account_number }}" @if($account!=null && $item->account_number=== $account->account_number)
+                                                            selected
+                                                          @endif  >{{ $item->account_number."-".$item->AccountType->name.'. '.number_format($item->BalanceCardAccount->balance,0)."VND" }}</option>
                                                   @endforeach
                                               </select>
                                           </div>
@@ -221,6 +223,8 @@
                 enablePagination:false,
                 onInit:()=>{
                     prev.hide();
+
+
                 },
                 onStepChanging:  function  (event, currentIndex, newIndex) {
                     let check =( currentIndex > newIndex ||
@@ -380,8 +384,8 @@
             // to acc
             let acc=$('#account_number');
             acc.on('change', async ()=>{
-                let bank=$('#bank').val();
-                if(bank!==''){
+                let b=bank.val();
+                if(b!==''){
                     let data = await  searchAcc( $('#bank').val() , acc.val());
                     if(data!=="1"){
                         validator.settings.rules.account_number.checkAccount.bank = true;
@@ -418,7 +422,8 @@
                 })
                 return a;
             }
-            let amount=$('#amount');
+
+            var amount=$('#amount');
             amount.on('change', async ()=>{
                 let data = await CheckAmount(amount.val(), $('#from_account').val() );
                 if(!isNaN(data.status)){
@@ -428,7 +433,8 @@
                 }
             });
             // from acc
-            let F_acc=$('#from_account');
+            var F_acc=$('#from_account');
+            F_acc.val()!==""?amount.attr('disabled',false):amount.attr('disabled',true);
             F_acc.on('change',async ()=>{
                 if(F_acc.val()!==''){
                     amount.attr('disabled',false);

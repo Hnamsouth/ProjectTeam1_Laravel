@@ -50,7 +50,7 @@ Route::middleware(['auth:web'])->prefix('/user')->group(function (){
         //  account transfer
         Route::prefix('transfer')->group(function(){
 
-            Route::get('within-bank',[UserAccountController::class,'showTransferWithinBank'])->name('user.transfer.within-bank');
+            Route::get('within-bank/{account?}',[UserAccountController::class,'showTransferWithinBank'])->name('user.transfer.within-bank');
             Route::post('within-bank',[UserAccountController::class,'handleTransfer']);
             Route::post('check-amount-transfer',[UserAccountController::class,'CheckAmount_Transfer'])->name('check-amount-transfer');
 

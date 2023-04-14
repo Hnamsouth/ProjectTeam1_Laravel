@@ -9,7 +9,7 @@
         <div class="row">
             @foreach($acc as $index=>$item)
                 <div class="col-12">
-                    <div class="card card-hover">
+                    <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 col-lg-4 col-xl-3">
@@ -26,7 +26,7 @@
                                         <h4>Main Account</h4>
                                         <h4 class="balance-ui">Balance</h4>
                                     </div>
-                                        <div class="card ">
+                                        <div class="card  card-hover">
                                             <div class="p-3 row align-items-center">
                                                 <a class="col-sm-8 col-md-6 account-redirect" href="{{route('user.account.detail',["account"=>$item->id])}}" type="button" data-account="{{$item->id}}">
                                                     <h4>Account Number:</h4>
@@ -37,48 +37,62 @@
                                                         <input type="password" class="form-bl text-end" id="balance" value="{{ $item->BalanceCardAccount->balance}}" disabled> <a class="ms-2" type="button" onclick="showBalance(true)"><i class="ti ti-aperture"></i></a>
                                                     </div>
                                                 </div>
-                                                <div class="row justify-content-end">
-                                                    <div class="col-6 p-0"><button type="button" class="btn btn-danger float-end"><a class="text-decoration-none text-white" href="user/acc/transfer/within-bank">Make Transaction</a></button></div>
+                                                <div class="row">
+                                                    <div class="col-6 ps-2  justify-content-start">
+                                                        <a class="btn  btn-outline-primary float-start text-decoration-none"  href="{{route('user.account.detail',["account"=>$item->id])}}">Account Detail</a>
+                                                    </div>
+                                                    <div class="col-6 p-0  justify-content-end">
+                                                        <a class="btn  btn-danger float-end text-decoration-none text-white" href="{{route('user.transfer.within-bank',['account'=>$item->id])}}">Make Transaction</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                 </div>
                             </div>
+                            @if(isset($item->DepositAccount))
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                <h4>Deposit Account</h4>
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                            @foreach($item->DepositAccount as $da)
+                                                <div class="col-12">
+                                                    <div class="card card-hover">
+                                                        <div class="row p-4">
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">ACCOUNT NUMBER:  </span> <span class="fs-3 text-bg-light-gray">{{$da->account_number}}</span></div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">PROFIT:  </span> <span class="fs-3 text-bg-light-gray">{{ number_format($da->profit,2)}} VND</span></div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">DAYS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->days}}</span></div>
+                                                            </div>
+
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">CLOSE DATE:  </span> <span class="fs-3 text-bg-light-gray">{{$da->close_date}}</span></div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">TERMS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->terms}} Months</span></div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">Status:  </span> <span class="fs-3 @if($da->status)  text-success @else  text-danger @endif  ">{{$da->status?"Activate":"Stop"}}</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                            @endif
                         </div>
                     </div>
                 </div>
-                @if(isset($item->DepositAccount))
-                    <div class="d-flex justify-content-between m-2">
-                        <h4>Deposit Account</h4>
-                    </div>
-                   @foreach($item->DepositAccount as $da)
-                        <div class="col-12">
-                            <div class="card card-hover">
-                                <div class="row p-4">
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">ACCOUNT NUMBER:  </span> <span class="fs-3 text-bg-light-gray">{{$da->account_number}}</span></div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">PROFIT:  </span> <span class="fs-3 text-bg-light-gray">{{ number_format($da->profit,2)}} VND</span></div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">DAYS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->days}}</span></div>
-                                    </div>
-{{--                                    <div class="col-sm-6 col-md-4">--}}
-{{--                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">METHOD OF INTEREST PAYMENT:  </span> <span class="fs-3 text-bg-light-gray">{{$da->interest_payment_period}}</span></div>--}}
-{{--                                    </div>--}}
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">CLOSE DATE:  </span> <span class="fs-3 text-bg-light-gray">{{$da->close_date}}</span></div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">TERMS:  </span> <span class="fs-3 text-bg-light-gray">{{$da->terms}} Months</span></div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                   @endforeach
-                @endif
+
             @endforeach
             <div id="deposit">
 
