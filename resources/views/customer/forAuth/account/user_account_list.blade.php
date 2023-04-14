@@ -34,7 +34,7 @@
                                                 </a>
                                                 <div class="col-sm-4 col-md-6 text-end">
                                                     <div class="">
-                                                        <input type="password" class="form-bl text-end" id="balance" value="{{ $item->BalanceCardAccount->balance}}" disabled> <a class="ms-2" type="button" onclick="showBalance(true)"><i class="ti ti-aperture"></i></a>
+                                                        <input type="password" class="form-bl text-end" id="balance" value="{{number_format( $item->BalanceCardAccount->balance,0)."VND"}}" disabled> <a class="ms-2" type="button" onclick="showBalance(true)"><i class="ti ti-aperture"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="row">

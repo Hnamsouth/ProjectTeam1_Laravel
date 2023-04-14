@@ -30,7 +30,11 @@ use \App\Http\Controllers\User\Auth\JWTController;
 
 
 Route::get('/', function () {
-    return view('customer.page.home');
+    $credit=\App\Models\CreditCardType::all();
+    $debit=\App\Models\DebitCardType::all();
+    $accs=\App\Models\AccountType::all();
+    $sv=\App\Models\DepositType::all();
+    return view('customer.page.home',compact('credit','debit','accs','sv'));
 })->name('home');
 
 Route::get('acc-register/{acc_type?}',[RegisterController::class,'showRegistrationForm'])->name('acc.register');
