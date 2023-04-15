@@ -4,14 +4,14 @@
     <div class="container">
         <section>
         <div class="row">
-            @foreach($acc as $item)
+            @foreach($acc as $index=>$item)
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-2">
                             <h3 class="mb-0">{{$item->name}}</h3>
                         </div>
-                        <p class="mb-3 card-subtitle">{{$item->name_dev}}</p>
+{{--                        <p class="mb-3 card-subtitle">{{$item->name_dev}}</p>--}}
                         <div class="row">
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                     <img
@@ -26,7 +26,14 @@
                                 <div class="row">
                                     <div class="col-md-12 col-xl-3">
                                         <h5>BENEFIT</h5>
-                                        <p>No joining & annual fee required. Lifetime support.</p>
+                                        @if($index==0)
+                                            <p>Open acount quickly and get desired account number when registering at counter.</p>
+                                        @elseif($index==1)
+                                            <p>Open 1 get 3 with many offers. Online verification within 1 minute.</p>
+                                        @else
+                                            <p>Enjoy a world of exclusive privileges: financial privileges, experience privileges and lifestyle privileges</p>
+                                        @endif
+
                                     </div>
                                     <div class="col-md-12 col-xl-3">
                                         <h5>OUTSTANDING OFFER</h5>

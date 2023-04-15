@@ -16,7 +16,7 @@
         <div class="col-12">
             <div class="">
                 <div class="card-body wizard-content">
-                    <h4 class="card-title">Transfer to Account</h4>
+                    <h4 class="card-title">Open Saving Account</h4>
                     <form class="validation-wizard wizard-circle mt-5" >
 
                         <!-- Step 1 -->
@@ -106,17 +106,7 @@
                                                 <input type="date" class="form-control"  id="end_date" disabled>
                                             </div>
                                         </div>
-{{--                                        <div class="col-md-6">--}}
-{{--                                            <div class="mb-4">--}}
-{{--                                                <label for="settlement_channel">SETTLEMENT CHANEL<span class="text-danger">*</span></label>--}}
-{{--                                                <select class="form-select required" id="settlement_channel" name="settlement_channel" required style="width: 100%; height: 36px" >--}}
-{{--                                                    <option></option>--}}
-{{--                                                  <option value="online">Online settlement</option>--}}
-{{--                                                  <option value="online">On-counter settlement</option>--}}
-{{--                                                </select>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        @error('description') <p class="text-danger ms-2">{{$message}} </p> @enderror--}}
+
                                         <div class="col-md-6">
                                             <div class="mb-4">
                                                 <label for="account_receive">CURRENT ACCOUNT TO SETTLEMENT <span class="text-danger">*</span></label>

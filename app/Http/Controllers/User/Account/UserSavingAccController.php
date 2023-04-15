@@ -142,7 +142,7 @@ class UserSavingAccController extends Controller
                         'amount'=>$am,
                         'fees'=>0,
                         'status'=>1,
-                        'description'=>$trans_t,
+                        'description'=>$trans_t->name." Open Saving Account",
                         'transaction_type_id'=>TransactionType::SAVING_DEPOSIT,
                         'from_number'=>$sa->account_number,
                         'account_holder_name'=>$sa->User->UserInfo->name,
@@ -228,6 +228,7 @@ class UserSavingAccController extends Controller
             $data['end_date']=$dacc->close_date;
             $data['settlement_method']=SettlementMethod::find($dacc->settlement_method_id)->name;
             $data['mess']=$profit['status_wbm']?'':'Your savings account has not reached its maturity date.Interest will be calculated with fixed interest rate. Previously paid payments will be deducted from the principal';
+
             return response(['status' => $dacc->status===1,'acc_to_receive'=>$dacc->AccountReceive->account_number,'data'=>$data]);
         }catch (Throwable $e){
             return response(['status' => $e]);
@@ -235,7 +236,6 @@ class UserSavingAccController extends Controller
     }
 
     public function profits($dacc){
-
         try {
             $ipm=$dacc->interest_payment_method_id;
             $ipp=$dacc->interest_payment_period;
@@ -250,7 +250,11 @@ class UserSavingAccController extends Controller
                     ->where('from','=',$ipp)
                     ->first();
 
-                if($daysOfTerm > $dacc->days){ // rut truoc han
+                if ($dacc->days===0){
+                    $data['status_wbm']=false;
+                    $data['receive']=0;
+                    $data['pay']=0;
+                }else if($daysOfTerm > $dacc->days){ // rut truoc han
                     // tinh tien lai da tra
                    $d4=Carbon::parse($dacc->open_date)->addDays($dacc->days);
                    $month=$date1->diffInMonths($d4);
