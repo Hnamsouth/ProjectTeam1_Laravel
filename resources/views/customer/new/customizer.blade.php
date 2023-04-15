@@ -46,7 +46,7 @@
                   <span class="d-flex">
                     <i class="ti ti-users"></i>
                   </span>
-                        <span class="hide-menu">User</span>
+                        <span class="hide-menu">Account </span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
@@ -54,17 +54,10 @@
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-user" style="font-size: 20px;"></i>
                                 </div>
-                                <span class="hide-menu">Account</span>
+                                <span class="hide-menu">Account list</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="{{route('user.saving-acc-list')}}" class="ms-4 sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-businessplan" style="font-size: 20px"></i>
-                                </div>
-                                <span class="hide-menu">Savings plan</span>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="sidebar-item">

@@ -12,7 +12,7 @@
             <div class="row w-75 mx-auto">
                 <div class="col-sm-6">
                     <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">ACCOUNT NUMBER:  </span> <span class="fs-3 text-bg-light-gray">{{$account->account_number}}</span></div>
-                    <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">BALANCE:  </span> <span class="fs-3 text-bg-light-gray">{{$account->BalanceCardAccount->balance}} ₫</span></div>
+                    <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">BALANCE:  </span> <span class="fs-3 text-bg-light-gray">{{number_format($account->BalanceCardAccount->balance,0)}} ₫</span></div>
                     <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">ACCOUNT TYPE:  </span> <span class="fs-3 text-bg-light-gray">{{$account->AccountType->name}}</span></div>
                     <div class="mb-4"> <span class="fs-3 fw-semibold text-cl-gray me-2">OPEN DATE:  </span> <span class="fs-3 text-bg-light-gray">{{$account->created_at->format('Y-m-d')}}</span></div>
                 </div>
