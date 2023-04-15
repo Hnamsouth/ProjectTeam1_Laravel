@@ -188,11 +188,11 @@ class UserAccountController extends Controller
         try {
             $ut_pw=UserTransSecret::where('user_id',auth()->user()->id)->first();
             $appointmentTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $ut_pw->expires);
-            $check=0;
+            $check=0; // false
             if (intval($request->get('transfer_pw')) === $ut_pw->trans_password ) {
-                $check=1;
+                $check=1; // true
                 if( $appointmentTime->lt(Carbon::now())){
-                    $check=2;
+                    $check=2; // false
                 }
             }
             return response()->json(['status'=>$check]);

@@ -130,7 +130,7 @@
                                           <input type="number" class="form-control ip-code border-0 text-center" data-index="6" maxlength="1" placeholder="-">
                                       </div>
                                   </div>
-                                  <p class="text-danger hide" id="mess-err-trans">Transfer password incorrect</p>
+                                  <p class="text-danger" id="mess-err-trans">Transfer password incorrect</p>
                                   @error('trans_password') <p class="text-danger ms-2">{{$message}} </p> @enderror
                                   <input type="hidden" name="trans_password" id="trans_password">
                                   <div class="d-flex align-items-center">
@@ -315,6 +315,7 @@
                     let tpw=$('#trans_password').val();
                     if(tpw!==''){
                         let ctp = parseInt( await checkTransPw(tpw));
+                        console.log(ctp);
                         if (ctp === 1) {
                             $('#mess-err-trans').text("");
                             let stm= await Transfer();
@@ -323,7 +324,6 @@
                                 actionF.hide();
                                 $('#finishF').show();
                             }else{
-                                console.log(stm.status);
                                 alert(stm.status);
                             }
                         } else if (ctp === 0) {
@@ -574,6 +574,7 @@
                     },
                     url: "{{route('c.t.pw')}}",
                     success: function(response) {
+                        // console.log(response);
                         a=response.status;
                     },
                 });
